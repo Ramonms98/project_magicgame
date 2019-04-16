@@ -42,10 +42,11 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Card(
               child: new InkWell(
+                splashColor: Colors.deepOrange,
                 onTap: () {
                   print("tapped");
                 },
-                child: Container(
+                child: new Container(
                   width: 200.0,
                   height: 150.0,
                   decoration: BoxDecoration(
@@ -61,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     textAlign: TextAlign.right,
                   ),
                 ),
+               
               ),          
             ),
           ],
