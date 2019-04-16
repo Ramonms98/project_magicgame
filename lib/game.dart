@@ -1,37 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'game.dart';
 
-// Main method to run the app itself
-void main() {
-  var myApp = MyApp();
-    // Return with the app Session
-    return runApp(myApp);
-}
-
-class MyApp extends StatelessWidget {
-  // This widget is the main menu of my application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Magic Game',
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-      ),
-      home: MainMenu(title: 'Project Magic Game'),
-    );
-    
-  }
-}
-
-class MainMenu extends StatefulWidget {
-  MainMenu({Key key, this.title}) : super(key: key);
+class Game extends StatefulWidget {
+  Game({Key key, this.title}) : super(key: key);
   final String title;
   @override
-  _MainMenuState createState() => _MainMenuState();
+  _GameState createState() => _GameState();
 }
 
-class _MainMenuState extends State<MainMenu> {
+class _GameState extends State<Game> {
   // The following method locks screen orientation to portrait
   @override
   void initState(){
