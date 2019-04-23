@@ -51,6 +51,7 @@ class _MainMenuState extends State<MainMenu> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+<<<<<<< HEAD
             Material (
               elevation: 4.0,
               shape : RoundedRectangleBorder(),
@@ -68,6 +69,32 @@ class _MainMenuState extends State<MainMenu> {
             Divider(
               color: Colors.grey,
               height : 16.0
+=======
+            Card(
+              child: new InkWell(
+                splashColor: Colors.deepOrange,
+                onTap: () {
+                  print("tapped");
+                },
+                child: new Container(
+                  width: 200.0,
+                  height: 150.0,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      // After adding asset to pubspec.yaml it simply works adding the path
+                      image: AssetImage("assets/images/play_singleplayer.jpg"),
+                      fit: BoxFit.cover,
+                      alignment: Alignment.topCenter,
+                    ),
+                  ),
+                  child: Text(
+                    "PLAY OFFLINE",
+                    textAlign: TextAlign.right,
+                  ),
+                ),
+               
+              ),          
+>>>>>>> e27934026bf0b6c81b5acd9f090ffcdc38692ab6
             ),
             Material (
               elevation: 4.0,

@@ -8,6 +8,20 @@ class Game extends StatefulWidget {
   _GameState createState() => _GameState();
 }
 
+class JKPOChoser {
+    var magicTypes = String();
+
+}
+
+class Magic{
+  
+  int identifier;
+  String friendlyName;
+
+  Magic();
+
+}
+
 class _GameState extends State<Game> {
   // The following method locks screen orientation to portrait
   @override
