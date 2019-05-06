@@ -48,13 +48,13 @@ class _GameState extends State<Game> {
           children: <Widget>[
             new FloatingActionButton(
               onPressed: () {
-                print("Earth!");
+                print("Fire!");
                 MagicTheme magicThemeA = new MagicTheme(0, "Elementary", 4);
                 int s= Spells.generateRandomSpell(magicThemeA);
-                if (Spells.playerWins(new Spell(2, "Earth"), Spells.spellArray(magicThemeA)[s])== 1) {
+                if (Spells.playerWins(new Spell(2, "Fire"), Spells.spellArray(magicThemeA)[s])== 1) {
                   points++;
                   Fluttertoast.showToast(
-                    msg: "Earth wins " + Spells.spellArray(magicThemeA)[s].getSpellName() + ". Points: " + points.toString(),
+                    msg: "Fire wins " + Spells.spellArray(magicThemeA)[s].getSpellName() + ". Points: " + points.toString(),
                     toastLength: Toast.LENGTH_SHORT,
                     gravity: ToastGravity.CENTER,
                     timeInSecForIos: 1,
@@ -64,7 +64,7 @@ class _GameState extends State<Game> {
                   );
                 }else if (Spells.playerWins(new Spell(2, "Earth"), Spells.spellArray(magicThemeA)[s]) == 2) {
                   Fluttertoast.showToast(
-                    msg: "Earth ties with " + Spells.spellArray(magicThemeA)[s].getSpellName() + ". Points: " + points.toString(),
+                    msg: "Fire ties with " + Spells.spellArray(magicThemeA)[s].getSpellName() + ". Points: " + points.toString(),
                     toastLength: Toast.LENGTH_SHORT,
                     gravity: ToastGravity.CENTER,
                     timeInSecForIos: 1,
@@ -75,7 +75,7 @@ class _GameState extends State<Game> {
                 }else {
                   points--;
                   Fluttertoast.showToast(
-                    msg: "Earth loses to " + Spells.spellArray(magicThemeA)[s].getSpellName() + ". Points: " + points.toString(),
+                    msg: "Fire loses to " + Spells.spellArray(magicThemeA)[s].getSpellName() + ". Points: " + points.toString(),
                     toastLength: Toast.LENGTH_SHORT,
                     gravity: ToastGravity.CENTER,
                     timeInSecForIos: 1,
@@ -87,7 +87,7 @@ class _GameState extends State<Game> {
               },
               child: new ConstrainedBox(
                 constraints: new BoxConstraints.expand(),
-                child: new Image.asset("assets/images/earth.jpg", fit: BoxFit.scaleDown, gaplessPlayback: true),
+                child: new Image.asset("assets/images/fire.jpg", fit: BoxFit.scaleDown, gaplessPlayback: true),
               ),
             ),
             new FloatingActionButton(
@@ -198,8 +198,8 @@ class Spells {
     if (magicTheme.themeName == "Elementary") {
       spells[0] = new Spell (0, "Fire");
       spells[1] = new Spell (1, "Water");
-      spells[2] = new Spell (2, "Earth");
-      spells[3] = new Spell (3, "Air");
+      spells[2] = new Spell (2, "Eletricity");
+      spells[3] = new Spell (3, "Ice");
     }else {
       spells = null;
     }
@@ -211,15 +211,15 @@ class Spells {
     if (playerSpell.getSpellName() == "Water") {
       if (machineSpell.getSpellName() == "Fire") {
         wins = 1;
-      }else if (playerSpell.getSpellName() == machineSpell.getSpellName() || machineSpell.getSpellName() == "Earth") {
+      }else if (playerSpell.getSpellName() == machineSpell.getSpellName() || machineSpell.getSpellName() == "Ice") {
         wins = 2;
       }else {
         wins = 0;
       }
-    }else if (playerSpell.getSpellName() == "Earth") {
-      if (machineSpell.getSpellName() == "Air") {
+    }else if (playerSpell.getSpellName() == "Fire") {
+      if (machineSpell.getSpellName() == "Ice") {
         wins = 1;
-      }else if (playerSpell.getSpellName() == machineSpell.getSpellName() || machineSpell.getSpellName() == "Water") {
+      }else if (playerSpell.getSpellName() == machineSpell.getSpellName() || machineSpell.getSpellName() == "Eletricity") {
         wins = 2;
       }else {
         wins = 0;
